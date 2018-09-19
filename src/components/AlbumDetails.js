@@ -20,7 +20,6 @@ export default class AlbumDetails extends Component {
     this.setState({ showThumbnails: !this.state.showThumbnails })
   }
 
-
   showAlbumPhotos() {
     return(
       this.props.images.map(image => {

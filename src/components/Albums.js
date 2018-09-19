@@ -7,12 +7,7 @@ import AlbumDetails from './AlbumDetails';
 class Albums extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      albums : [],
-      photos : [],
-      isPhoto: false,
-      isAlbum: false
-    }
+    this.state = { albums : [] }
     this.albumImages = this.albumImages.bind(this)
   }
  

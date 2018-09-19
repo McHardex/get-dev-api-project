@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {fetchposts} from '../actions/postApiActionCreators'
 import {fetchcomments} from '../actions/commentApiActionCreators'
+import '../Assets/stylesheets/posts.css'
+import Comments from './Comments'
+
 
 class Posts extends Component {
   constructor(props) {
@@ -13,29 +16,21 @@ class Posts extends Component {
   }
     
   componentWillMount() { 
-    this.props.fetchposts().then(() => {
-      this.props.fetchcomments( this.props.comments );
-    })
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      posts: nextProps.myApp.posts,
-      comments: nextProps.myApp.comments
-    })
+    this.props.fetchposts()
+    this.props.fetchcomments()
   }
 
   render() {
+    const posts = this.props.myApp.posts
     return (
       <div>
         {
-          this.state.posts.map(post => {
-            const commentsForPost = this.state.comments.filter(comment => comment.postId === post.id)
+          posts.map(post => {
+            const commentsForPost = this.props.myApp.comments.filter(comment => comment.postId === post.id)
             return(
-              <div key={post.id}>
-                <h3>post: {post.title}</h3>
-                { commentsForPost.map(comment => <div key={comment.id}><p>{comment.body}</p></div>)}
-                <span>{commentsForPost.length} Comments</span>
+              <div key={post.id} className="postContainer">
+                <h2 className="postTitle">{post.title}</h2>
+                <Comments comments={commentsForPost} />
               </div>
             )
           })

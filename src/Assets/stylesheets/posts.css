@@ -1,0 +1,16 @@
+.postContainer {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 30px;
+  border: 1px solid #efefef;
+}
+
+p.comments {
+  font-size: 18px;
+  line-height: 2;
+  font-weight: 300;
+}
+
+span.noOfComments {
+  font-weight: 700;
+}
