@@ -24,29 +24,24 @@ class Posts extends Component {
       comments: nextProps.myApp.comments
     })
   }
+
   render() {
-    console.log(this.state.comments)
-      return (
-        <div>
-          {
-            this.state.posts.map(post => (
-              <div>
+    return (
+      <div>
+        {
+          this.state.posts.map(post => {
+            const commentsForPost = this.state.comments.filter(comment => comment.postId === post.id)
+            return(
+              <div key={post.id}>
                 <h3>post: {post.title}</h3>
-                {
-                  this.state.comments.map((comment) => {
-                    if(post.id === comment.postId) {
-                      return ( <div>
-                      <p>{comment.body}</p>
-                      </div>
-                      )
-                    }
-                  })
-                }
+                { commentsForPost.map(comment => <div key={comment.id}><p>{comment.body}</p></div>)}
+                <span>{commentsForPost.length} Comments</span>
               </div>
-            ))
-          }
-        </div>
-      )
+            )
+          })
+        }
+      </div>
+    )
   }
 }
 

@@ -4,7 +4,8 @@ const initalState = {
   posts: [],
   comments: [],
   albums: [],
-  photos: []
+  photos: [],
+  users: []
 }
 
 export const myApp = (state = initalState, action) => {
@@ -18,6 +19,8 @@ export const myApp = (state = initalState, action) => {
       return {...state, albums: action.album}
     case AppConstants.FETCH_PHOTOS_SUCCESS:
       return {...state, photos: action.photo}
+    case AppConstants.FETCH_USERS_SUCCESS:
+      return {...state, users: action.user}
     default:
       return state
   }

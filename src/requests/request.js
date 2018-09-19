@@ -12,5 +12,8 @@ export default {
   },
   getPhotos(){
     return getApi('GET', 'https://jsonplaceholder.typicode.com/photos')
+  },
+  getUsers(){
+    return getApi('GET', 'https://jsonplaceholder.typicode.com/users')
   }
 }
