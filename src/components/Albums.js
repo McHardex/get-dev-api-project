@@ -14,34 +14,12 @@ class Albums extends Component {
       isAlbum: false
     }
     this.albumImages = this.albumImages.bind(this)
-    // this.toggleAlbum = this.toggleAlbum.bind(this)
-    // this.showAlbumPhotos = this.showAlbumPhotos.bind(this)
   }
-  
-  // togglePhoto() {
-  //   this.setState({
-  //     isPhoto: !this.state.isPhoto,
-  //   })
-  //   // console.log(e.target.id)
-  // }
-
-  // toggleAlbum = (e) => {
-  //   e.preventDefault()
-  //   const id = e.target.id
-  //   this.setState({ albumId: this.state.albumId === id ? null : id})
-  // }
-
+ 
   componentWillMount() { 
     this.props.fetchAlbums()
     this.props.fetchPhotos()
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   this.setState({
-  //     albums: nextProps.myApp.albums,
-  //     photos: nextProps.myApp.photos
-  //   })
-  // }
 
   albumImages(albumId) {
     const imagesArray = [].concat.apply([],  this.props.myApp.photos)

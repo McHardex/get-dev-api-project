@@ -1,8 +1,4 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
-// import {fetchAlbums} from '../actions/albumsApiActionCreators'
-// import {fetchPhotos} from '../actions/photosApiActionCreators'
-// import Albums from './AlbumDetails';
 
 export default class AlbumDetails extends Component {
   constructor(props) {
@@ -11,7 +7,6 @@ export default class AlbumDetails extends Component {
 
     this.togglePhotos = this.togglePhotos.bind(this)
     this.toggleThumbnails = this.toggleThumbnails.bind(this)
-    // this.toggleAlbum = this.toggleAlbum.bind(this)
     this.showAlbumPhotos = this.showAlbumPhotos.bind(this)
   }
 
@@ -25,23 +20,6 @@ export default class AlbumDetails extends Component {
     this.setState({ showThumbnails: !this.state.showThumbnails })
   }
 
-  // toggleAlbum = (e) => {
-  //   e.preventDefault()
-  //   const id = e.target.id
-  //   this.setState({ albumId: this.state.albumId === id ? null : id})
-  // }
-
-  // componentWillMount() {
-  //   this.props.fetchAlbums()
-  //   this.props.fetchPhotos()
-  // }
-
-  // componentWillReceiveProps(nextProps) {
-  //   this.setState({
-  //     albums: nextProps.myApp.albums,
-  //     photos: nextProps.myApp.photos
-  //   })
-  // }
 
   showAlbumPhotos() {
     return(
@@ -79,7 +57,3 @@ export default class AlbumDetails extends Component {
     )
   }
 }
-
-
-// const mapStateToProps = ({myApp}) => ({myApp})
-// export default connect(mapStateToProps, {})(AlbumDetails)

@@ -22,21 +22,21 @@ class Users extends Component {
     })
   }
   render() {
-      return (
-        <div>
-          {
-            this.state.users.map(user => (
-              <div key={user.id}>
-                <h2>USERNAME: {user.username}</h2>
-                <p>NAME: {user.name}</p>
-                <p>EMAIL: {user.email}</p>
-                <p>PHONE NUMBER: {user.phone}</p>
-                <p>ADDRESS: {user.address.street}</p>
-              </div>
-            ))
-          }
-        </div>
-      )
+    return (
+      <div>
+        {
+          this.state.users.map(user => (
+            <div key={user.id}>
+              <h2>USERNAME: {user.username}</h2>
+              <p>NAME: {user.name}</p>
+              <p>EMAIL: {user.email}</p>
+              <p>PHONE NUMBER: {user.phone}</p>
+              <p>ADDRESS: {user.address.street}</p>
+            </div>
+          ))
+        }
+      </div>
+    )
   }
 }
 
