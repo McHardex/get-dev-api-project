@@ -28,8 +28,8 @@ class Posts extends Component {
           posts.map(post => {
             const commentsForPost = this.props.myApp.comments.filter(comment => comment.postId === post.id)
             return(
-              <div key={post.id} className="postContainer">
-                <h2 className="postTitle">{post.title}</h2>
+              <div key={post.id} className="shadow-sm p-2 mb-2 bg-white rounded w-50 mx-auto">
+                <button type="button" className="btn btn-outline-none"><h3>{post.title}</h3></button>
                 <Comments comments={commentsForPost} />
               </div>
             )

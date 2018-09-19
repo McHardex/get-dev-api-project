@@ -24,7 +24,7 @@ export default class AlbumDetails extends Component {
     return(
       this.props.images.map(image => {
         return(
-          <img src={image.url} key={image.id} alt=''/>
+          <img src={image.url} key={image.id} alt={image.title} className="rounded-circle w-25 h-25"/>
         )
       })
     )
@@ -34,7 +34,7 @@ export default class AlbumDetails extends Component {
     return(
       this.props.images.map(image => {
         return(
-          <img src={image.thumbnailUrl} key={image.id} alt=''/>
+          <img src={image.thumbnailUrl} key={image.id} alt={image.title} className="rounded-circle img-thumbnail"/>
         )
       })
     )
@@ -43,13 +43,16 @@ export default class AlbumDetails extends Component {
   render() {
     const album = this.props.album
     return (
-      <div>
+      <div className="shadow-sm p-3 mb-1 bg-white rounded w-50 mx-auto">
         <div>
-          <h3 key={album.id} id={album.id} onClick={this.togglePhotos} >Album title: {album.title}</h3>
+        <p><button type="button" className="btn btn-outline-none p-1">
+        <h3 key={album.id} id={album.id} onClick={this.togglePhotos} >{album.title}</h3>
+        </button></p>
+          
           {this.state.showPhoto && this.showAlbumPhotos()}
         </div>
         <div>
-          <a  href='' onClick={this.toggleThumbnails} id={album.id}>album thumnails</a>
+        <p><button type="button" class="btn btn-primary" onClick={this.toggleThumbnails}>album thumnails</button></p>
           {this.state.showThumbnails && this.showThumbnails()}
         </div>
       </div>

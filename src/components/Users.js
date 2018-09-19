@@ -26,8 +26,8 @@ class Users extends Component {
       <div>
         {
           this.state.users.map(user => (
-            <div key={user.id}>
-              <h2>USERNAME: {user.username}</h2>
+            <div key={user.id} className="shadow-sm p-3 mb-2 bg-white rounded w-50 mx-auto">
+              <p className="">USERNAME: {user.username}</p> 
               <p>NAME: {user.name}</p>
               <p>EMAIL: {user.email}</p>
               <p>PHONE NUMBER: {user.phone}</p>

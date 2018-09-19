@@ -16,14 +16,16 @@ export default class Comments extends Component {
   
   showComments() {
     return(
-      this.props.comments.map(comment => <div key={comment.id}><p className="comments">{comment.body}</p></div>)
+      this.props.comments.map(comment => <div key={comment.id}><p className="w-100 text-justify border-bottom p-2">{comment.body}</p></div>)
     )
   }
 
   render() {
     return (
       <div>
-        <span className="noOfComments" onClick={this.toggleComments}>{this.props.comments.length} Comments</span>
+        <button type="button" className="btn btn-primary m-3" onClick={this.toggleComments}>
+        comments <span className="badge badge-light">{this.props.comments.length}</span>
+        </button>
         {this.state.showComments && this.showComments()}
       </div>
     )

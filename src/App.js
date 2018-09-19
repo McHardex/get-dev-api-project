@@ -4,15 +4,19 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-      <header>
-        <Link to='/'> Home </Link>
-        <Link to='albums'> Albums </Link>
-        <Link to='users'> Users </Link>
-      </header>
-        <main>
-          {this.props.children}
-        </main>
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item"><Link to='/'> Home </Link></li>
+          <li className="breadcrumb-item active" aria-current="page"><Link to='albums'> Albums </Link></li>
+          <li className="breadcrumb-item active" aria-current="page"><Link to='users'> Users </Link></li>
+        </ol>
+      </nav>
+      <main>
+        {this.props.children}
+      </main>
       </div>
     );
   }
 }
+
+
