@@ -29,12 +29,12 @@ class Posts extends Component {
                         div key = { post.id }
                         className = "shadow-sm p-2 mb-2 bg-white rounded w-50 mx-auto" >
                         <
-                        button type = "button"
-                        className = "btn btn-outline-none" > < h3 > { post.title } < /h3></button >
+                        div className = "w-100 p-3" >
                         <
+                        h4 > { post.title } < /h4> < /div > <
                         Comments comments = { commentsForPost }
-                        /> <
-                        /div>
+                        /> < /
+                        div >
                     )
                 })
             } <
