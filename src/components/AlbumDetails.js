@@ -55,7 +55,7 @@ export default class AlbumDetails extends Component {
     return ( 
       <div className="shadow-sm p-3 mb-1 bg-white rounded w-75 mx-auto">
         <div>
-          <h4 className="w-100 p-1" key={album.id} id={album.id} onClick ={this.togglePhotos}style={titleStyle}> 
+          <h4 className="w-100 p-1 albumTitle" key={album.id} id={album.id} onClick ={this.togglePhotos}style={titleStyle}> 
             {album.title}
           </h4>
           {this.state.showPhoto && this.showAlbumPhotos()} 
