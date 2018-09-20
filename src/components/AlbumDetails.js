@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 
+const titleStyle = {
+    cursor: 'pointer',
+};
+
 export default class AlbumDetails extends Component {
     constructor(props) {
         super(props)
@@ -57,7 +61,8 @@ export default class AlbumDetails extends Component {
             h4 className = "w-100 p-1"
             key = { album.id }
             id = { album.id }
-            onClick = { this.togglePhotos } > { album.title } < /h4>
+            onClick = { this.togglePhotos }
+            style = { titleStyle } > { album.title } < /h4>
 
             { this.state.showPhoto && this.showAlbumPhotos() } <
             /div> <
