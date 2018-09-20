@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Comments extends Component {
   constructor(props) {
     super(props)
-    this.state = { showComments: false }
+    this.state = {showComments: false}
 
     this.toggleComments = this.toggleComments.bind(this)
     this.showComments = this.showComments.bind(this)
@@ -23,7 +23,7 @@ export default class Comments extends Component {
   render() {
     return (
       <div>
-        <button type="button" className="btn btn-primary m-3" onClick={this.toggleComments}>
+        <button type="button" className="btn btn-primary mb-3" onClick={this.toggleComments}>
         comments <span className="badge badge-light">{this.props.comments.length}</span>
         </button>
         {this.state.showComments && this.showComments()}
