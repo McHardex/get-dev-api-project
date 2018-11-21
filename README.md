@@ -17,6 +17,7 @@ A simple json placeholder api in which users and their respective comments can b
   ### UI
     * reactJS
     * Bootstrap for styling
+    * Redux for application state management
 
 [ Api consumed ](https://jsonplaceholder.typicode.com/posts)
 
